@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jagrati Joshi | Portfolio Resume</title>
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg-2: #0b1830;
+      --card: rgba(13, 24, 48, 0.74);
+      --card-solid: #0e1a33;
+      --text: #eef4ff;
+      --muted: #aebbd7;
+      --line: rgba(255, 255, 255, 0.09);
+      --accent: #6ea8ff;
+      --accent-2: #67e8c8;
+      --accent-3: #9c8cff;
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.32);
+      --radius: 26px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(110, 168, 255, 0.18), transparent 28%),
+        radial-gradient(circle at top right, rgba(103, 232, 200, 0.14), transparent 24%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(var(--max), calc(100% - 28px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: rgba(7, 17, 31, 0.55);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+      gap: 16px;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      font-size: 1.05rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .hero {
+      padding: 42px 0 28px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.85fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .glass {
+      background: var(--card);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      backdrop-filter: blur(14px);
+    }
+
+    .hero-main {
+      padding: 34px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-main::after {
+      content: "";
+      position: absolute;
+      inset: auto -40px -40px auto;
+      width: 220px;
+      height: 220px;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(110,168,255,0.25), transparent 70%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.92rem;
+      padding: 9px 14px;
+      border: 1px solid rgba(110,168,255,0.24);
+      background: rgba(110,168,255,0.10);
+      color: #dbe8ff;
+      border-radius: 999px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.5rem, 6vw, 4.9rem);
+      line-height: 0.98;
+      letter-spacing: -0.05em;
+      max-width: 10ch;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #ffffff 0%, #cfe0ff 38%, #8eedcf 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .lead {
+      margin: 18px 0 24px;
+      max-width: 62ch;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .button, .button-ghost {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 14px;
+      font-weight: 600;
+      transition: transform 0.2s ease, opacity 0.2s ease, border-color 0.2s ease;
+    }
+
+    .button {
+      background: linear-gradient(135deg, var(--accent), #90b9ff);
+      color: #07111f;
+    }
+
+    .button-ghost {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+    }
+
+    .button:hover, .button-ghost:hover {
+      transform: translateY(-1px);
+      opacity: 0.98;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .chip {
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+      color: #d8e3fb;
+      font-size: 0.95rem;
+    }
+
+    .hero-side {
+      display: grid;
+      gap: 18px;
+    }
+
+    .metric-card {
+      padding: 24px;
+      min-height: 160px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .metric-number {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      letter-spacing: -0.05em;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .metric-label {
+      color: var(--muted);
+      max-width: 18ch;
+    }
+
+    .mini-panel {
+      padding: 24px;
+      background: linear-gradient(180deg, rgba(156,140,255,0.12), rgba(103,232,200,0.06));
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+    }
+
+    .section {
+      padding: 18px 0;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin: 0 0 18px;
+    }
+
+    .section-title h2 {
+      margin: 0;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      letter-spacing: -0.04em;
+    }
+
+    .section-title p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .summary-card,
+    .skills-card,
+    .timeline-card,
+    .education-card {
+      padding: 28px;
+    }
+
+    .summary-card p,
+    .education-card p,
+    .timeline-card p,
+    .timeline-card li,
+    .skills-card p {
+      color: var(--muted);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .highlight {
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.035);
+      border: 1px solid var(--line);
+    }
+
+    .highlight strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 1rem;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .skill-box {
+      padding: 18px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.035);
+    }
+
+    .skill-box h3 {
+      margin: 0 0 12px;
+      font-size: 1rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 0.9rem;
+      background: #11203f;
+      border: 1px solid var(--line);
+      color: #dce7ff;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 20px;
+    }
+
+    .job {
+      padding: 22px;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .job-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+
+    .job h3 {
+      margin: 0;
+      font-size: 1.08rem;
+    }
+
+    .job .sub {
+      color: #d6e1ff;
+      font-weight: 600;
+      margin-top: 3px;
+    }
+
+    .job .time {
+      color: var(--accent-2);
+      white-space: nowrap;
+      font-size: 0.95rem;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .education-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .edu-item {
+      padding: 18px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.035);
+    }
+
+    .edu-item strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .footer {
+      padding: 28px 0 44px;
+      text-align: center;
+      color: #8ea0c4;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .two-col,
+      .skills-grid,
+      .highlight-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-side {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .hero {
+        padding-top: 22px;
+      }
+
+      .hero-main,
+      .summary-card,
+      .skills-card,
+      .timeline-card,
+      .education-card,
+      .metric-card,
+      .mini-panel {
+        padding: 22px;
+      }
+
+      .job-top {
+        flex-direction: column;
+      }
+
+      .hero-side {
+        grid-template-columns: 1fr;
+      }
+
+      .button, .button-ghost {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand">Jagrati Joshi</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container hero-grid">
+      <section class="glass hero-main">
+        <div class="eyebrow">Java Backend Developer · Spring Boot · Microservices</div>
+        <h1><span class="gradient-text">Building resilient backend systems</span></h1>
+        <p class="lead">
+          Java Backend Developer with 5 years of professional experience, including 3+ years building high-performance distributed systems with Spring Boot and microservices architecture. Focused on REST APIs, resilient service communication, clean code, and enterprise-grade delivery.
+        </p>
+        <div class="hero-actions">
+          <a class="button" href="mailto:jagritij75@gmail.com">Contact Me</a>
+          <a class="button-ghost" href="#experience">View Experience</a>
+        </div>
+        <div class="contact-row" id="contact">
+          <a class="chip" href="mailto:jagritij75@gmail.com">jagritij75@gmail.com</a>
+          <a class="chip" href="tel:+917895516077">+91 7895516077</a>
+          <span class="chip">Hyderabad, Telangana</span>
+        </div>
+      </section>
+
+      <aside class="hero-side">
+        <div class="glass metric-card">
+          <div class="metric-number">5+</div>
+          <div class="metric-label">Years of professional software experience</div>
+        </div>
+        <div class="glass metric-card">
+          <div class="metric-number">3+</div>
+          <div class="metric-label">Years building Spring Boot and microservices solutions</div>
+        </div>
+        <div class="glass mini-panel">
+          <strong style="font-size:1.05rem; display:block; margin-bottom:10px;">Career Highlights</strong>
+          <div style="color: var(--muted);">
+            Improved service availability, reduced issue resolution time, worked on core banking systems, and supported secure enterprise application delivery.
+          </div>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section" id="about">
+      <div class="section-title">
+        <h2>About</h2>
+      </div>
+      <div class="glass summary-card">
+        <p>
+          Skilled in developing RESTful APIs, implementing fault-tolerant service communication with WebClient and Resilience4j, and applying clean code principles to create maintainable backend solutions. Experienced in the core banking domain with a strong foundation in service-oriented architecture and enterprise application development.
+        </p>
+        <div class="highlight-grid">
+          <div class="highlight">
+            <strong>Backend Engineering</strong>
+            Designing robust services with Java, Spring Boot, and modern API practices.
+          </div>
+          <div class="highlight">
+            <strong>Reliability Focus</strong>
+            Building resilience with timeout, fallback, and circuit breaker patterns.
+          </div>
+          <div class="highlight">
+            <strong>Enterprise Delivery</strong>
+            Experience in secure, production-facing systems and client-aligned implementation.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="section-title">
+        <h2>Skills</h2>
+      </div>
+      <div class="glass skills-card">
+        <div class="skills-grid">
+          <div class="skill-box">
+            <h3>Languages & Databases</h3>
+            <div class="tags">
+              <span class="tag">Java 8/17</span>
+              <span class="tag">SQL</span>
+              <span class="tag">MongoDB</span>
+              <span class="tag">MySQL</span>
+            </div>
+          </div>
+          <div class="skill-box">
+            <h3>Frameworks</h3>
+            <div class="tags">
+              <span class="tag">Spring Boot</span>
+              <span class="tag">Spring Web</span>
+              <span class="tag">Spring Data JPA</span>
+              <span class="tag">JAX-RS</span>
+              <span class="tag">MicroProfile</span>
+            </div>
+          </div>
+          <div class="skill-box">
+            <h3>Microservices</h3>
+            <div class="tags">
+              <span class="tag">REST APIs</span>
+              <span class="tag">WebClient</span>
+              <span class="tag">FeignClient</span>
+              <span class="tag">Service Discovery</span>
+              <span class="tag">Circuit Breaker</span>
+              <span class="tag">API Gateway</span>
+            </div>
+          </div>
+          <div class="skill-box">
+            <h3>Tools & Delivery</h3>
+            <div class="tags">
+              <span class="tag">Docker</span>
+              <span class="tag">CI/CD</span>
+              <span class="tag">Bitbucket</span>
+              <span class="tag">OpenShift</span>
+              <span class="tag">Postman</span>
+              <span class="tag">Swagger</span>
+              <span class="tag">Maven</span>
+              <span class="tag">JUnit</span>
+              <span class="tag">Gradle</span>
+            </div>
+          </div>
+          <div class="skill-box">
+            <h3>Project Management</h3>
+            <div class="tags">
+              <span class="tag">Jira Administrator</span>
+              <span class="tag">Confluence</span>
+              <span class="tag">Bug Tracking</span>
+              <span class="tag">Test Case Management</span>
+            </div>
+          </div>
+          <div class="skill-box">
+            <h3>Additional Technologies</h3>
+            <div class="tags">
+              <span class="tag">Lombok</span>
+              <span class="tag">OpenAPI</span>
+              <span class="tag">Resilience4j</span>
+              <span class="tag">Exception Handling</span>
+              <span class="tag">SLF4J Logging</span>
+              <span class="tag">OAuth 2.0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="section-title">
+        <h2>Experience</h2>
+      </div>
+      <div class="glass timeline-card">
+        <div class="timeline">
+          <article class="job">
+            <div class="job-top">
+              <div>
+                <h3>Tata Consultancy Services</h3>
+                <div class="sub">Citibank</div>
+              </div>
+              <div class="time">Oct 2020 – Present</div>
+            </div>
+            <ul>
+              <li>Designed and implemented a fault-tolerant RESTful API for a core banking application using Java 17, Spring Boot, and MongoDB.</li>
+              <li>Implemented timeout, fallback, and circuit-breaker resilience patterns that improved service availability and reduced downstream failures.</li>
+              <li>Conducted root-cause analysis and code-level debugging across production environments, reducing mean time to resolution and improving application stability.</li>
+              <li>Worked with Postman and testing practices to validate APIs before release.</li>
+              <li>Collaborated directly with clients and business analysts for requirement gathering, API design, and documentation.</li>
+              <li>Worked in an Agile Scrum environment using Jira for sprint planning, issue tracking, and backlog monitoring.</li>
+              <li>Secured the application using OAuth 2.0 and supported deployments through automated CI/CD and OpenShift-based monitoring.</li>
+              <li>Developed and enhanced a balance inquiry microservice for real-time inter-service communication.</li>
+            </ul>
+          </article>
+
+          <article class="job">
+            <div class="job-top">
+              <div>
+                <h3>Tata Consultancy Services</h3>
+                <div class="sub">Avis Budget Group</div>
+              </div>
+            </div>
+            <ul>
+              <li>Provided access support for Atlassian applications including Jira, Confluence, and Bitbucket.</li>
+              <li>Worked on Linux patching and system maintenance.</li>
+              <li>Handled incidents and supported client issue resolution workflows.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="education">
+      <div class="section-title">
+        <h2>Education & Certification</h2>
+      </div>
+      <div class="glass education-card">
+        <div class="education-list">
+          <div class="edu-item">
+            <strong>Bachelor of Computer Application</strong>
+            Swami Rama Himalayan University, Jollygrant (Dehradun)
+          </div>
+          <div class="edu-item">
+            <strong>AWS Certified Cloud Practitioner</strong>
+            Industry certification
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    Portfolio website created from resume content.
+  </footer>
+</body>
+</html>
