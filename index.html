@@ -6,19 +6,19 @@
   <title>Jagrati Joshi | Portfolio Resume</title>
   <style>
     :root {
-      --bg: #f4ecdf;
-      --bg-2: #eadfce;
-      --bg-3: #ddd0bc;
-      --card: rgba(255, 250, 243, 0.72);
-      --card-strong: rgba(248, 241, 232, 0.94);
-      --text: #3f3327;
-      --muted: #725f4d;
-      --line: rgba(110, 90, 68, 0.14);
-      --accent: #b58a5a;
-      --accent-2: #8a6a4a;
-      --accent-3: #c9a27a;
-      --accent-4: #e1c7a6;
-      --shadow: 0 24px 70px rgba(108, 86, 61, 0.14);
+      --bg: #0f172a;
+      --bg-2: #1f2937;
+      --bg-3: #123524;
+      --card: rgba(17, 24, 39, 0.76);
+      --card-strong: rgba(31, 41, 55, 0.94);
+      --text: #f3f7fb;
+      --muted: #b8c4cf;
+      --line: rgba(255, 255, 255, 0.10);
+      --accent: #1d4f91;
+      --accent-2: #1f6b4f;
+      --accent-3: #334155;
+      --accent-4: #2c7a5a;
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
       --radius: 26px;
       --max: 1180px;
     }
@@ -30,10 +30,10 @@
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at 10% 10%, rgba(201, 162, 122, 0.26), transparent 24%),
-        radial-gradient(circle at 90% 12%, rgba(225, 199, 166, 0.34), transparent 20%),
-        radial-gradient(circle at 85% 85%, rgba(181, 138, 90, 0.18), transparent 22%),
-        linear-gradient(135deg, var(--bg) 0%, var(--bg-2) 45%, var(--bg-3) 100%);
+        radial-gradient(circle at 10% 10%, rgba(29, 79, 145, 0.22), transparent 24%),
+        radial-gradient(circle at 90% 12%, rgba(31, 107, 79, 0.20), transparent 20%),
+        radial-gradient(circle at 85% 85%, rgba(51, 65, 85, 0.18), transparent 22%),
+        linear-gradient(135deg, var(--bg) 0%, var(--bg-2) 48%, var(--bg-3) 100%);
       background-attachment: fixed;
       line-height: 1.6;
       overflow-x: hidden;
@@ -41,21 +41,28 @@
 
     body::before,
     body::after {
-      right: -120px;
-      bottom: -100px;
-      background: rgba(225, 199, 166, 0.28);
+      content: "";
+      position: fixed;
+      inset: auto;
+      width: 420px;
+      height: 420px;
+      border-radius: 999px;
+      filter: blur(90px);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.55;
     }
 
     body::before {
       top: -120px;
       left: -80px;
-      background: rgba(201, 162, 122, 0.24);
+      background: rgba(29, 79, 145, 0.22);
     }
 
     body::after {
       right: -120px;
       bottom: -100px;
-      background: rgba(255, 127, 209, 0.20);
+      background: rgba(31, 107, 79, 0.20);
     }
 
     a { color: inherit; text-decoration: none; }
@@ -72,8 +79,8 @@
       top: 0;
       z-index: 20;
       backdrop-filter: blur(16px);
-      background: rgba(244, 236, 223, 0.74);
-      border-bottom: 1px solid rgba(110, 90, 68, 0.10);
+      background: rgba(15, 23, 42, 0.72);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
     .nav-inner {
@@ -111,7 +118,7 @@
       width: 0;
       height: 2px;
       border-radius: 2px;
-      background: linear-gradient(90deg, var(--accent), var(--accent-3));
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
       transition: width 0.2s ease;
     }
 
@@ -144,8 +151,8 @@
       position: relative;
       overflow: hidden;
       background:
-        linear-gradient(180deg, rgba(255,255,255,0.46), rgba(255,255,255,0.24)),
-        rgba(255, 248, 240, 0.86);
+        linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02)),
+        rgba(17, 24, 39, 0.82);
     }
 
     .hero-main::before {
@@ -156,7 +163,7 @@
       width: 260px;
       height: 260px;
       border-radius: 999px;
-      background: radial-gradient(circle, rgba(201,162,122,0.30), transparent 70%);
+      background: radial-gradient(circle, rgba(29,79,145,0.30), transparent 70%);
       pointer-events: none;
     }
 
@@ -167,7 +174,7 @@
       width: 260px;
       height: 260px;
       border-radius: 999px;
-      background: radial-gradient(circle, rgba(225,199,166,0.38), transparent 70%);
+      background: radial-gradient(circle, rgba(31,107,79,0.26), transparent 70%);
       pointer-events: none;
     }
 
@@ -177,9 +184,9 @@
       gap: 10px;
       font-size: 0.92rem;
       padding: 9px 14px;
-      border: 1px solid rgba(181,138,90,0.26);
-      background: linear-gradient(90deg, rgba(201,162,122,0.18), rgba(225,199,166,0.22));
-      color: #5f4935;
+      border: 1px solid rgba(29,79,145,0.26);
+      background: linear-gradient(90deg, rgba(29,79,145,0.16), rgba(31,107,79,0.14));
+      color: #dbe8f4;
       border-radius: 999px;
       margin-bottom: 18px;
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
@@ -194,7 +201,7 @@
     }
 
     .gradient-text {
-      background: linear-gradient(90deg, #5f4835 0%, #8c6d4c 40%, #b58a5a 100%);
+      background: linear-gradient(90deg, #ffffff 0%, #cdd8e6 40%, #8dd1b4 100%);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
@@ -215,10 +222,27 @@
     }
 
     .button, .button-ghost {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 14px;
+      font-weight: 700;
+      transition: transform 0.2s ease, opacity 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .button {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #f8fbff;
+      box-shadow: 0 12px 28px rgba(29, 79, 145, 0.22);
+    }
+
+    .button-ghost {
       border: 1px solid var(--line);
-      background: rgba(255,255,255,0.42);
+      background: rgba(255,255,255,0.05);
       color: var(--text);
     }
+
     .button:hover, .button-ghost:hover {
       transform: translateY(-2px);
       opacity: 0.99;
@@ -236,8 +260,8 @@
       padding: 10px 14px;
       border-radius: 999px;
       border: 1px solid var(--line);
-      background: rgba(255,255,255,0.42);
-      color: #5a4736;
+      background: rgba(255,255,255,0.05);
+      color: #d9e5ef;
       font-size: 0.95rem;
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.03);
     }
@@ -254,8 +278,8 @@
       flex-direction: column;
       justify-content: center;
       background:
-        linear-gradient(180deg, rgba(255,255,255,0.44), rgba(255,255,255,0.20)),
-        rgba(255, 248, 240, 0.84);
+        linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02)),
+        rgba(31, 41, 55, 0.82);
     }
 
     .metric-number {
@@ -264,7 +288,7 @@
       letter-spacing: -0.05em;
       line-height: 1;
       margin-bottom: 8px;
-      background: linear-gradient(90deg, #7c5f40, #a77d52 55%, #c9a27a 100%);
+      background: linear-gradient(90deg, #ffffff, #b7c8db 50%, #89cfb0 100%);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
@@ -277,7 +301,7 @@
 
     .mini-panel {
       padding: 24px;
-      background: linear-gradient(180deg, rgba(201,162,122,0.16), rgba(225,199,166,0.24));
+      background: linear-gradient(180deg, rgba(29,79,145,0.12), rgba(31,107,79,0.10));
       border-radius: var(--radius);
       border: 1px solid var(--line);
     }
@@ -313,8 +337,8 @@
     .education-card {
       padding: 28px;
       background:
-        linear-gradient(180deg, rgba(255,255,255,0.42), rgba(255,255,255,0.20)),
-        rgba(255, 248, 240, 0.82);
+        linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)),
+        rgba(17, 24, 39, 0.78);
     }
 
     .summary-card p,
@@ -351,14 +375,14 @@
     .job:hover,
     .edu-item:hover {
       transform: translateY(-2px);
-      border-color: rgba(124,140,255,0.28);
+      border-color: rgba(29,79,145,0.28);
     }
 
     .highlight strong {
       display: block;
       margin-bottom: 6px;
       font-size: 1rem;
-      color: #5a4533;
+      color: #eef4fa;
     }
 
     .skills-grid {
@@ -390,9 +414,9 @@
       border-radius: 999px;
       padding: 8px 12px;
       font-size: 0.9rem;
-      background: linear-gradient(180deg, rgba(201,162,122,0.18), rgba(225,199,166,0.26));
-      border: 1px solid rgba(110,90,68,0.12);
-      color: #5a4736;
+      background: linear-gradient(180deg, rgba(29,79,145,0.16), rgba(31,107,79,0.10));
+      border: 1px solid rgba(255,255,255,0.10);
+      color: #e3edf6;
     }
 
     .timeline {
@@ -422,13 +446,13 @@
     }
 
     .job .sub {
-      color: #5e4a38;
+      color: #d8e3ed;
       font-weight: 600;
       margin-top: 3px;
     }
 
     .job .time {
-      color: var(--accent-2);
+      color: #89cfb0;
       white-space: nowrap;
       font-size: 0.95rem;
     }
@@ -459,7 +483,7 @@
     .footer {
       padding: 28px 0 44px;
       text-align: center;
-      color: #7d6854;
+      color: #9fb0c1;
       font-size: 0.95rem;
       position: relative;
       z-index: 1;
